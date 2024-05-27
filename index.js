@@ -9,6 +9,10 @@ app.get('/',(req,res)=>{
     res.send('<h1>Welcome</h1>')
 })
 
+app.post('/',(req,res)=>{
+    res.send('<h1>Post</h1>')
+})
+
 app.listen(5000,()=>{
     console.log("Server running at http://localhost:5000");
 })
