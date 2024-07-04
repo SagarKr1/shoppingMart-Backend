@@ -10,7 +10,7 @@ const createProduct = async(req,res)=>{
             // image = "no image url"
         }
         
-        if(data.name=="" && data.size=="" && data.category=="" && data.brand=="" && data.description == "" && data.price == "" && data.stock == ""){
+        if(data.name=="" && data.size=="" && data.unit=="" && data.category=="" && data.brand=="" && data.description == "" && data.price == "" && data.stock == ""){
             res.json({
                 statusCode:404,
                 body:"Data should not be empty"
@@ -23,6 +23,7 @@ const createProduct = async(req,res)=>{
             "id":Date.now(),
             "name":data.name.toLowerCase(),
             "size":data.size,
+            "unit":data.unit,
             "category":data.category.toLocaleUpperCase(),
             "brand":data.brand.toLocaleUpperCase(),
             "description":data.description,

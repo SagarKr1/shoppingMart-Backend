@@ -14,13 +14,13 @@ const deleteProduct = async(req,res)=>{
         }
         await collection.deleteOne(deleteProduct);
         await db.close();
-        res.json({
+        return res.json({
             statusCode:200,
             body:"Product Deleted"
         });
 
     }catch(e){
-        res.json({
+        return res.json({
             statusCode:500,
             body:e.message
         });
