@@ -3,6 +3,11 @@ const createProduct = require('../controller/createProduct');
 const Product = require('../controller/Products');
 const getProduct = require('../controller/getProduct');
 const deleteProduct = require('../controller/deleteProduct');
+const updateProduct = require('../controller/updateProduct');
+const category = require('../controller/category');
+const getCategory = require('../controller/getCategory');
+const deleteCategory = require('../controller/deleteCategory');
+
 
 const route = express.Router();
 
@@ -23,6 +28,13 @@ route.get('/Product/:id',getProduct);
 //delete product
 route.delete('/product/delete',deleteProduct);
 
+//Update Product
+route.put('/product/update',updateProduct);
 
+route.post('/category',category);
+
+route.get('/category',getCategory);
+
+route.delete('/category',deleteCategory);
 
 module.exports = route;
